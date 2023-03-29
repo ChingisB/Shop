@@ -1,0 +1,84 @@
+2023/03/27 17:17:30 [error] 29#29: *1 "/usr/share/nginx/html/images/index.html" is not found (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/ HTTP/1.1", host: "localhost"
+2023/03/27 17:17:30 [error] 29#29: *1 open() "/etc/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/images/"
+2023/03/27 17:17:53 [error] 29#29: *3 "/etc/nginx/html/index.html" is not found (2: No such file or directory), client: 172.25.0.1, server: , request: "GET / HTTP/1.1", host: "localhost"
+2023/03/27 17:19:17 [error] 29#29: *5 open() "/usr/share/nginx/html/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "localhost"
+2023/03/27 18:47:26 [error] 29#29: *1 open() "/usr/share/nginx/html/images/image1.jpg" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.jpg HTTP/1.1", host: "localhost"
+2023/03/27 18:47:31 [error] 29#29: *3 open() "/usr/share/nginx/html/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "localhost"
+2023/03/27 18:47:47 [error] 29#29: *5 open() "/etc/nginx/html/images" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images HTTP/1.1", host: "localhost"
+2023/03/27 18:48:17 [error] 29#29: *7 open() "/etc/nginx/html/images" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images HTTP/1.1", host: "127.0.0.1"
+2023/03/27 18:48:17 [error] 29#29: *7 open() "/etc/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "http://127.0.0.1/images"
+2023/03/27 18:51:27 [error] 29#29: *9 open() "/usr/share/nginx/html/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "localhost"
+2023/03/27 18:51:47 [error] 29#29: *11 open() "/usr/share/nginx/html/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "127.0.0.1"
+2023/03/27 18:51:55 [error] 29#29: *13 open() "/etc/nginx/html/login" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /login HTTP/1.1", host: "127.0.0.1"
+2023/03/27 18:52:38 [error] 29#29: *15 open() "/usr/share/nginx/html/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "127.0.0.1"
+2023/03/27 18:54:24 [error] 29#29: *1 open() "/etc/nginx/html/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "127.0.0.1"
+2023/03/27 18:54:29 [error] 29#29: *3 open() "/etc/nginx/html/app/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /app/images/image1.png HTTP/1.1", host: "127.0.0.1"
+2023/03/27 18:56:52 [error] 22#22: *1 open() "/etc/nginx/html/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "localhost"
+2023/03/27 18:57:00 [error] 22#22: *3 open() "/etc/nginx/html/flask/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /flask/images/image1.png HTTP/1.1", host: "localhost"
+2023/03/27 18:57:58 [error] 22#22: *5 open() "/etc/nginx/html/flask/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /flask/images/image1.png HTTP/1.1", host: "127.0.0.1"
+2023/03/27 19:03:09 [error] 22#22: *1 open() "/etc/nginx/html/flask/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /flask/images/image1.png HTTP/1.1", host: "127.0.0.1"
+2023/03/27 19:03:19 [error] 22#22: *3 open() "/etc/nginx/html/images" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images HTTP/1.1", host: "localhost"
+2023/03/27 19:04:56 [error] 22#22: *6 open() "/flask/imagesimage1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "localhost"
+2023/03/27 19:05:10 [error] 22#22: *7 open() "/flask/imagesimage1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "127.0.0.1"
+2023/03/27 19:06:07 [error] 22#22: *1 open() "/flask/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "127.0.0.1"
+2023/03/27 19:06:08 [error] 22#22: *1 open() "/flask/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "127.0.0.1"
+2023/03/27 19:06:46 [error] 22#22: *9 open() "/flask/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "127.0.0.1:80"
+2023/03/27 19:15:52 [error] 29#29: *1 open() "/var/www/html/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "127.0.0.1"
+2023/03/27 19:18:01 [error] 29#29: *3 open() "/var/www/html/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "127.0.0.1:80"
+2023/03/27 19:18:04 [error] 29#29: *3 "/var/www/html/images/image1.png/index.html" is not found (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png/ HTTP/1.1", host: "127.0.0.1:80"
+2023/03/27 19:19:00 [error] 29#29: *4 open() "/var/www/html/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "127.0.0.1"
+2023/03/27 19:20:10 [error] 29#29: *12 open() "/var/www/html/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "localhost"
+2023/03/27 19:20:40 [error] 29#29: *16 open() "/var/www/html/images/flask/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/flask/images/image1.png HTTP/1.1", host: "localhost"
+2023/03/27 19:24:30 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:24:31 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:24:32 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:24:33 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:24:34 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:24:36 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:24:40 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:24:47 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:25:01 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:25:31 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:26:23 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:27:24 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:28:25 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:29:25 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:30:26 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:31:27 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:32:27 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:33:28 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:34:28 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:35:29 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:36:30 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:37:30 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:38:31 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:39:32 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:40:32 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:41:33 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:42:34 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:43:35 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:44:35 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:45:36 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:46:37 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:47:37 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:48:38 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:49:39 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:50:39 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:51:40 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:52:41 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:53:41 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:54:42 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:55:43 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:7
+2023/03/27 19:57:09 [error] 22#22: *2 "/var/www/html/index.html" is not found (2: No such file or directory), client: 172.25.0.1, server: , request: "GET / HTTP/1.1", host: "localhost"
+2023/03/27 19:57:23 [error] 22#22: *3 open() "/var/www/html/images/image1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "localhost"
+2023/03/27 20:03:08 [error] 23#23: *1 open() "/www/data/imagesimage1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "127.0.0.1"
+2023/03/27 20:03:51 [error] 23#23: *3 "/www/data/imagesimage1.png/index.html" is not found (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png/ HTTP/1.1", host: "127.0.0.1:80"
+2023/03/27 20:03:54 [error] 23#23: *3 open() "/www/data/imagesimage1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "127.0.0.1:80"
+2023/03/27 20:03:58 [error] 23#23: *3 directory index of "/www/data/images" is forbidden, client: 172.25.0.1, server: , request: "GET /images/ HTTP/1.1", host: "127.0.0.1:80"
+2023/03/27 20:04:01 [error] 23#23: *3 open() "/etc/nginx/html/images" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images HTTP/1.1", host: "127.0.0.1:80"
+2023/03/27 20:05:16 [error] 23#23: *5 open() "/www/data/imagesimage1.png" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png HTTP/1.1", host: "127.0.0.1"
+2023/03/28 09:18:22 [error] 21#21: *1 directory index of "/www/data/" is forbidden, client: 172.25.0.1, server: , request: "GET / HTTP/1.1", host: "172.16.91.16"
+2023/03/28 19:53:22 [error] 23#23: *1 open() "/www/data/images/image1.png25" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /images/image1.png25 HTTP/1.1", host: "127.0.0.1"
+2023/03/28 19:53:22 [error] 23#23: *1 open() "/www/data/favicon.ico" failed (2: No such file or directory), client: 172.25.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "http://127.0.0.1/images/image1.png25"
+2023/03/28 20:54:12 [error] 29#29: *1 directory index of "/www/data/" is forbidden, client: 172.20.0.1, server: , request: "GET / HTTP/1.1", host: "localhost"
+2023/03/28 20:54:12 [error] 29#29: *1 open() "/www/data/favicon.ico" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"

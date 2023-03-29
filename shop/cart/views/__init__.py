@@ -1,0 +1,1 @@
+from .shopping_session_view import ShoppingSessionView

@@ -1,0 +1,1 @@
+from .config import IMAGE_SERVICE

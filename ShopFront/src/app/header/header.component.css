@@ -1,0 +1,14 @@
+div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'OpenSans';
+    font-style: normal;
+}
+
+div div{
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
