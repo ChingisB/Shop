@@ -1,5 +1,5 @@
-import datetime
 from django.shortcuts import get_object_or_404
+import django.utils.timezone as time
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -43,7 +43,7 @@ class CategoryView(APIView):
         if serializer.is_valid():
             category.name = serializer['name'].value
             category.description = serializer['description'].value
-            category.modified_at = datetime.datetime.now()
+            category.modified_at = time.now()
             category.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

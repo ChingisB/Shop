@@ -19,7 +19,7 @@ def comment_view(request, product_id, comment_id=None):
         if comment_id:
             serializer = CommentSerializer(instance=get_object_or_404(Comment, id=comment_id))
             return Response(serializer.data, status=status.HTTP_200_OK)
-        data = Comment.objects.filter(product=product)
+        data = Comment.objects.filter(product=product).order_by('created_at')
         paginator = PageNumberPagination()
         data = paginator.paginate_queryset(data, request)
         serializer = CommentSerializer(data, many=True)

@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -134,4 +134,4 @@ AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend', )
 USE_X_FORWARDED_HOST = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-MEDIA_URL = 'http://127.0.0.1:80/images/'
+MEDIA_URL = "http://127.0.0.1:80/images/"

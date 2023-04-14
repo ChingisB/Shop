@@ -1,0 +1,21 @@
+<h1>Welcome to ChinaShop</h1>
+<form (ngSubmit)="onSubmit()">
+  <div class="formField">
+    <label for="email">email</label>
+    <input type="email" id="email" name="email" [(ngModel)]="email" required placeholder="your login">
+  </div>
+  <div class="formField">
+    <label for="password">password</label>
+    <input type="password" id="password" name="password" [(ngModel)]="password" required placeholder="your password">
+  </div>
+  <div class="formField">
+    <label for="password">copy of password</label>
+    <input type="password" id="passwordCopy" name="passwordCopy" [(ngModel)]="passwordCopy" required placeholder="copy of your password">
+  </div>
+  <button type="submit" class="blueButton">Login</button>
+</form>
+
+<div class="addLoginFunc"><a>Privacy</a></div>
+<div class="divisor"></div>
+<div class="addLoginFunc">Already have an account? <button class="fakeA" (click)="this.welcomePageComponent.toLogin()">Log in</button></div>
+

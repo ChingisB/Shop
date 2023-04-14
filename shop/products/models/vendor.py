@@ -1,12 +1,12 @@
 from django.db import models
-import datetime
+import django.utils.timezone as time
 
 
 class Vendor(models.Model):
     name = models.CharField(max_length=50, unique=True)
     description = models.CharField(max_length=200)
-    created_at = models.DateTimeField(default=datetime.datetime.now())
-    modified_at = models.DateTimeField(default=datetime.datetime.now())
+    created_at = models.DateTimeField(default=time.now)
+    modified_at = models.DateTimeField(default=time.now)
     deleted_at = models.DateTimeField(null=True)
 
     class Meta:

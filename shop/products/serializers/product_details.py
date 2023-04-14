@@ -5,7 +5,6 @@ from .inventory import InventorySerializer
 from .discount import DiscountSerializer
 from .category import CategorySerializer
 from .vendor import VendorSerializer
-from .rating import RatingSerializer
 from .product_image import ProductImageSerializer
 
 
@@ -17,6 +16,7 @@ class ProductDetailsSerializer(serializers.ModelSerializer):
     images = serializers.SerializerMethodField(read_only=True)
     likes = serializers.SerializerMethodField(read_only=True)
     rating = serializers.SerializerMethodField(read_only=True)
+    is_liked = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = Product
@@ -39,3 +39,10 @@ class ProductDetailsSerializer(serializers.ModelSerializer):
 
     def get_rating(self, obj):
         return Rating.objects.filter(product=obj).all().aggregate(Avg('rating'))['rating__avg']
+    
+    def get_is_liked(self, obj: Product):
+        try:
+            user = self.context.get('user')
+            return obj.like_set.filter(user=user).exists()
+        except:
+            return False

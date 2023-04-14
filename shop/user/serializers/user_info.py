@@ -4,8 +4,9 @@ from .user import UserSerializer
 
 
 class UserInfoSerializer(serializers.ModelSerializer):
+    user = UserSerializer(read_only=True)
 
     class Meta:
         model = UserInfo
-        fields = ('country', 'city', 'address', 'postal_code', 'telephone')
+        fields = ('country', 'city', 'address', 'postal_code', 'telephone', 'user')
 

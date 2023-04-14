@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import path
 from rest_framework.authtoken.views import obtain_auth_token
-from products.views import ProductView, CategoryView, RatingView
+from products.views import ProductView, CategoryView, RatingView, liked_products
 from products.views import VendorView, comment_view, like_view, ImageView
 from user.views import LoginView, SignupView, StaffView
 from user.views import LogoutView, UserInfoView, UserPaymentView
@@ -46,5 +46,6 @@ urlpatterns = [
     path('images/', ImageView.as_view()),
     path('payment_info/', UserPaymentView.as_view()),
     path('orders/', OrderView.as_view()),
-    path('orders/<int:order_id>', OrderView.as_view())
+    path('orders/<int:order_id>', OrderView.as_view()),
+    path('liked/', liked_products)
 ]

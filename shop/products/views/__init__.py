@@ -5,3 +5,4 @@ from .product_view import ProductView
 from .vendor_view import VendorView
 from .image_view import ImageView
 from .rating_view import RatingView
+from .liked_products_view import liked_products

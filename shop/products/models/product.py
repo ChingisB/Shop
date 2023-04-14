@@ -1,5 +1,5 @@
-from datetime import datetime
 from django.db import models
+import django.utils.timezone as time
 from .inventory import Inventory
 from .discount import Discount
 from .category import Category
@@ -14,8 +14,8 @@ class Product(models.Model):
     discount = models.ForeignKey(Discount, on_delete=models.DO_NOTHING, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(default=datetime.now())
-    modified_at = models.DateTimeField(default=datetime.now())
+    created_at = models.DateTimeField(default=time.now)
+    modified_at = models.DateTimeField(default=time.now)
     deleted_at = models.DateTimeField(null=True)
 
     class Meta:

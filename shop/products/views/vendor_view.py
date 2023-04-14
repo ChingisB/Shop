@@ -1,5 +1,5 @@
-import datetime
 from django.shortcuts import get_object_or_404
+import django.utils.timezone as time
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -43,7 +43,7 @@ class VendorView(APIView):
             vendor = get_object_or_404(Vendor, id=id)
             vendor.name = request.data.get("name", vendor.name)
             vendor.description = request.data.get("description", vendor.description)
-            vendor.modified_at = datetime.datetime.now()
+            vendor.modified_at = time.now()
             vendor.save()
             return Response(status=status.HTTP_200_OK)
         except:

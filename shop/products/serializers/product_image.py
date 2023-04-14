@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from django.core.files.storage import FileSystemStorage
 from products.models import ProductImage
 
 

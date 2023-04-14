@@ -1,0 +1,14 @@
+.background{
+  background-color: lightgray;
+  height: 25%;
+}
+.signInUpCard{
+  background-color: white;
+  height: 75%;
+  width: 100% ;
+  display: flex;
+}
+app-login,app-new-acc{
+  font-family: Arial;
+  margin: 1% auto auto;
+}

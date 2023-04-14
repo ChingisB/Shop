@@ -2,6 +2,7 @@ import json
 import requests
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
+import django.utils.timezone as time
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -51,7 +52,7 @@ class ProductView(APIView):
                 product = Product.objects.get(id=product_id)
             except Product.DoesNotExist:
                 return Response({"error": "No product with such ID"}, status=404)
-            serializer = ProductDetailsSerializer(product)
+            serializer = ProductDetailsSerializer(product, context={'user': request.user})
             return Response(serializer.data)
         products = Product.objects.all()
 
@@ -90,7 +91,7 @@ class ProductView(APIView):
 
         paginator = self.pagination_class()
         paginated_products = paginator.paginate_queryset(products, request)
-        serializer = ProductSerializer(paginated_products, many=True)
+        serializer = ProductSerializer(paginated_products, context={'user': request.user}, many=True)
         return Response(serializer.data)
 
     def put(self, request, product_id):
@@ -111,6 +112,7 @@ class ProductView(APIView):
             product.category = category
             product.vendor = vendor
             product.inventory.quantity = quantity
+            product.modified_at = time.now()
             product.inventory.save()
             product.save()
             return Response(status=status.HTTP_200_OK)

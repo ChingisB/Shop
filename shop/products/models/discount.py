@@ -1,5 +1,5 @@
-from datetime import datetime
 from django.db import models
+import django.utils.timezone as time
 
 
 class Discount(models.Model):
@@ -7,8 +7,8 @@ class Discount(models.Model):
     description = models.TextField(max_length=1000)
     percent = models.DecimalField(decimal_places=2, max_digits=8)
     active = models.BooleanField(default=True)
-    created_at = models.DateTimeField(default=datetime.now())
-    modified_at = models.DateTimeField(default=datetime.now())
+    created_at = models.DateTimeField(default=time.now)
+    modified_at = models.DateTimeField(default=time.now)
     deleted_at = models.DateTimeField(null=True)
 
     class Meta:

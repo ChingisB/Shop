@@ -16,6 +16,7 @@ class ProductSerializer(serializers.ModelSerializer):
     category = CategorySerializer()
     vendor = VendorSerializer()
     rating = serializers.SerializerMethodField(read_only=True)
+    is_liked = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = Product
@@ -28,3 +29,10 @@ class ProductSerializer(serializers.ModelSerializer):
 
     def get_rating(self, obj):
         return Rating.objects.filter(product=obj).all().aggregate(Avg('rating'))['rating__avg']
+    
+    def get_is_liked(self, obj):
+        try:
+            user = self.context.get('user')
+            return obj.like_set.filter(user=user).exists()
+        except:
+            return False

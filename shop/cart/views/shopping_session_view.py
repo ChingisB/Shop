@@ -1,3 +1,4 @@
+import django.utils.timezone as time
 from rest_framework.views import APIView
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
@@ -40,6 +41,7 @@ class ShoppingSessionView(APIView):
         if serializer.is_valid():
             for key, item in serializer.validated_data.items():
                 setattr(shopping_session, key, item)
+            shopping_session.modified_at = time.now()
             shopping_session.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
