@@ -8,4 +8,4 @@ User = get_user_model()
 class UserInfoBriefSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'first_name', 'last_name')
+        fields = ('id', 'username', 'first_name', 'last_name')

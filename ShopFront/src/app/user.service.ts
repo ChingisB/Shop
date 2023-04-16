@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UserWithToken } from './interfaces/userwithtoken';
 import { tap } from 'rxjs/operators';
+import { ApiConstService } from './api-const.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { tap } from 'rxjs/operators';
 export class UserService implements OnInit{
 
   private user: UserWithToken = <UserWithToken>{};
-  private static apiUrl = "http://127.0.0.1:8000";
+
   logged: boolean = false;
 
   ngOnInit(){
@@ -18,13 +19,12 @@ export class UserService implements OnInit{
     if(token){
       this.logged = true
     }
-
   }
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private apiService: ApiConstService) { }
 
   login(username: String, password: String): Observable<UserWithToken> {
-    return this.httpClient.post<UserWithToken>(`${UserService.apiUrl}/login/`, {"username": username, "password": password})
+    return this.httpClient.post<UserWithToken>(`${this.apiService.getApiUrl()}login/`, {"username": username, "password": password})
       .pipe(
         tap(user => {
           localStorage.setItem("token", user.token)
@@ -33,8 +33,18 @@ export class UserService implements OnInit{
       );
   }
 
-  getUserInfo(): UserWithToken {
+  getUser(): UserWithToken {
     return this.user;
+  }
+
+  logout(): Observable<any>{
+    localStorage.removeItem('token');
+    this.logged = false;
+    return this.httpClient.post(`${this.apiService.getApiUrl()}logout/`, {})
+  }
+
+  signUp(username: string, password: string, confirm_password: string, email: string){
+    return this.httpClient.post(`${this.apiService.getApiUrl()}signup/`, {username, password, confirm_password, email})
   }
 
 

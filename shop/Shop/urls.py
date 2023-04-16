@@ -26,10 +26,10 @@ urlpatterns = [
     path('products/', ProductView.as_view(), name="products"),
     path('products/<int:product_id>/', ProductView.as_view()),
     path('products/<int:product_id>/likes', like_view),
-    path('products/<int:product_id>/likes', like_view),
     path('products/<int:product_id>/comments', comment_view, name="comment"),
     path('products/<int:product_id>/comments/<int:comment_id>', comment_view, name="comment"),
     path('products/<int:product_id>/rating', RatingView.as_view()),
+    path('products/liked/', liked_products),
     path('category/', CategoryView.as_view(), name="categories"),
     path('category/<int:id>', CategoryView.as_view(), name="categories"),
     path('vendor/', VendorView.as_view(), name="vendor"),
@@ -47,5 +47,4 @@ urlpatterns = [
     path('payment_info/', UserPaymentView.as_view()),
     path('orders/', OrderView.as_view()),
     path('orders/<int:order_id>', OrderView.as_view()),
-    path('liked/', liked_products)
 ]
