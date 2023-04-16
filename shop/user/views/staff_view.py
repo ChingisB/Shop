@@ -7,7 +7,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from user.permissions import AdminPermission
-from user.serializers import UserSerializer, StaffSerializer
+from user.serializers import UserSerializer, SignUpSerializer
 
 
 User = get_user_model()
@@ -24,9 +24,9 @@ class StaffView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request):
-        serializer = StaffSerializer(data=request.data)
+        serializer = SignUpSerializer(data=request.data)
         if serializer.is_valid():
-            user = serializer.save(is_staff=True)
+            user = serializer.save(is_staff=True, is_superuser=False)
             token, _ = Token.objects.get_or_create(user=user)
             return Response({"token": token.key, "user": serializer.data}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
