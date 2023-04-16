@@ -1,0 +1,46 @@
+version: '3.7'
+
+services:
+  db_shop:
+    container_name: db_shop
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: shop
+    build:
+      context: ./database
+    ports:
+      - "5432:5432"
+
+  backend:
+    container_name: backend
+    build:
+      context: ./shop
+    environment:
+      DATABASE_URL: postgres://admin:root@db_shop:5432/shop
+      MEDIA_URL: http://nginx:80/images/
+      IMAGE_SERVICE: http://flask:5000/
+    depends_on:
+      - db_shop
+      - flask
+    ports:
+      - "8000:8000"
+  
+  nginx:
+    build:
+      context: ./nginx
+    volumes: 
+      - image-data:/www/data/images
+    ports:
+      - "80:80"
+
+  flask:
+    build:
+      context: ./flask
+    volumes: 
+      - image-data:/app/images
+    ports:
+      - "5000:5000"
+
+volumes:
+  image-data:
