@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from '../user.service';
 import {WelcomePageComponent} from "../welcome-page/welcome-page.component";
 
 @Component({
@@ -7,11 +8,17 @@ import {WelcomePageComponent} from "../welcome-page/welcome-page.component";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(public welcomePageComponent: WelcomePageComponent) {
+  constructor(public welcomePageComponent: WelcomePageComponent, 
+    private userService: UserService) {
   }
-  email: string | undefined;
-  password: string | undefined;
+  email: string = ''
+  password: string = ''
+
   onSubmit() {
-    alert(`Signing in with email ${this.email} and password ${this.password}`)
+      this.userService.login(this.email, this.password).subscribe(
+        user => {
+          alert(user.token)
+        }
+      )
   }
 }
