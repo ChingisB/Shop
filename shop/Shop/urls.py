@@ -42,6 +42,7 @@ urlpatterns = [
     path('signup/', SignupView.as_view(), name="signup"),
     path('cart/', ShoppingSessionView.as_view()),
     path('api-auth-token/', obtain_auth_token, name='api_token_auth'),
+    path('images/<int:product_id>', ImageView.as_view()),
     path('images/<int:id>', ImageView.as_view()),
     path('images/', ImageView.as_view()),
     path('payment_info/', UserPaymentView.as_view()),

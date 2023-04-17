@@ -33,7 +33,7 @@ class ImageView(APIView):
         return Response(ProductImageSerializer(data=data, many=True).data, 
                         status=status.HTTP_201_CREATED)
 
-    def put(self, request, product_id, image_id):
+    def put(self, request, image_id):
         uploaded_files = request.FILES
         image_file = [file for field, file in uploaded_files.items() 
                        if file.content_type.startswith('image/')][0]

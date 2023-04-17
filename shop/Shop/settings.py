@@ -142,4 +142,4 @@ AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend', )
 USE_X_FORWARDED_HOST = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-MEDIA_URL = "http://127.0.0.1:80/images/"
+MEDIA_URL = "http://92.47.4.210:59001/images/"
