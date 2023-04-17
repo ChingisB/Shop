@@ -8,11 +8,13 @@ User = get_user_model()
 class SignUpSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
     confirm_password = serializers.CharField(write_only=True)
+    is_staff = serializers.BooleanField(read_only=True)
+    is_superuser = serializers.BooleanField(read_only=True)
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password', 'first_name', 
-                  'last_name', 'confirm_password']
+        fields = ['id','username', 'email', 'password', 'first_name', 
+                  'last_name', 'confirm_password', 'is_staff', 'is_superuser']
 
     def validate(self, attrs):
         if attrs['password'] != attrs['confirm_password']:
