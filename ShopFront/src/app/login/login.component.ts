@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import {WelcomePageComponent} from "../welcome-page/welcome-page.component";
 
@@ -8,17 +9,20 @@ import {WelcomePageComponent} from "../welcome-page/welcome-page.component";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(public welcomePageComponent: WelcomePageComponent, 
-    private userService: UserService) {
+  constructor(public welcomePageComponent: WelcomePageComponent,
+    private userService: UserService, private router: Router) {
   }
-  email: string = ''
+  username: string = ''
   password: string = ''
 
   onSubmit() {
-      this.userService.login(this.email, this.password).subscribe(
-        user => {
-          alert(user.token)
-        }
-      )
+    this.userService.login(this.username, this.password).subscribe(
+    user => {
+        this.router.navigateByUrl('/products');
+      },
+      error => {
+        console.error(error);
+        alert("wrong login or password");
+      })
   }
 }

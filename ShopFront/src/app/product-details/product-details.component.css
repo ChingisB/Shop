@@ -1,0 +1,78 @@
+.page-borders{
+  margin: 0 5%;
+}
+
+.main-card{
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin: 50px 0;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+}
+.feature-card{
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin: 50px 0;
+  padding: 20px;
+}
+
+.feature-card h2{
+  margin-bottom: 20px;
+}
+
+.for-image{
+  width: 40%;
+}
+
+.for-main-info{
+  margin-top: 20px;
+  width: 40%;
+}
+
+*{
+  font-family: Arial;
+}
+h1, h2, h3, p{
+  margin: 5px;
+}
+h3{
+  color: #aaaaaa;
+}
+.underline{
+  margin: 15px 5px;
+  width: 100%;
+  border: 1px solid #dddddd;
+}
+
+.blue-button{
+  width: auto;
+  padding: 10px 20px;
+  margin: 20px 25px 20px 5px;
+  border: none;
+  border-radius: 8px;
+  background-color: #53a6ff;
+  color: white;
+  font-family: Arial;
+  font-weight: bolder;
+  font-size: 25px;
+  transition: background-color 0.2s ease-in-out;
+}
+.blue-button:hover{
+  background-color: #398de7;
+}
+.submit-button{
+  font-size: 20px;
+  margin-left: 0;
+}
+
+.comment-field {
+  width: calc(100% - 20px);
+  height: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: none;
+  font-size: 20px;
+}
+

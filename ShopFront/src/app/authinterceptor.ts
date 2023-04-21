@@ -1,23 +1,36 @@
-import { Injectable } from "@angular/core"
-import { HttpInterceptor, HttpEvent, HttpHandler} from "@angular/common/http"
-import { HttpRequest, HttpResponse, HttpErrorResponse} from "@angular/common/http"
-import { Observable, tap} from "rxjs"
+import { Injectable } from '@angular/core';
+import {
+  HttpInterceptor,
+  HttpEvent,
+  HttpHandler,
+  HttpRequest,
+  HttpClient,
+  HttpErrorResponse
+} from '@angular/common/http';
+import { Observable, of, throwError } from 'rxjs';
+import { ApiConstService } from './api-const.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor() {}
+
+  private isValid = true;
+
+  constructor(private http: HttpClient, private apiService: ApiConstService) {}
 
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const token = localStorage.getItem("token")
+    const token = this.getToken()
     if(token){
-        const authReq = req.clone({
-            headers: req.headers.set('Authorization', `Token ${token}`),})
-        return next.handle(authReq)
+        req = req.clone({setHeaders: {
+        Authorization: `Token ${token}`
+      }})
     }
-
     return next.handle(req)
+  }
+
+  public getToken(){
+    return localStorage.getItem('token');
   }
 }

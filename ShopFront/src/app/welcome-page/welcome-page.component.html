@@ -1,6 +1,6 @@
 <div class="background">
 </div>
 <div class="signInUpCard">
-  <app-login></app-login>
-  <app-new-acc></app-new-acc>
+  <app-login *ngIf="getMode()==='Login'"></app-login>
+  <app-new-acc *ngIf="getMode()==='NewAcc'"></app-new-acc>
 </div>

@@ -12,14 +12,14 @@ import { CommentComponent } from './comment/comment.component';
 import { FilterComponent } from './filter/filter.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { LoginComponent } from './login/login.component';
-import { NewAccComponent } from './new-acc/new-acc.component';
-import { NewCommentComponent } from './new-comment/new-comment.component';
+import { NewAccComponent } from './new-acc/new-acc.component'
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileSettingsComponent } from './profile-settings/profile-settings.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import {FormsModule} from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './authinterceptor';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -34,10 +34,10 @@ import { AuthInterceptor } from './authinterceptor';
     WelcomePageComponent,
     LoginComponent,
     NewAccComponent,
-    NewCommentComponent,
     ProfileComponent,
     ProfileSettingsComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +45,11 @@ import { AuthInterceptor } from './authinterceptor';
     FormsModule,
     HttpClientModule
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
-  }],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

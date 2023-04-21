@@ -53,7 +53,7 @@ class ProductView(APIView):
             except Product.DoesNotExist:
                 return Response({"error": "No product with such ID"}, status=404)
             serializer = ProductDetailsSerializer(product, context={'user': request.user})
-            return Response(serializer.data)
+            return Response(serializer.data[0])
         products = Product.objects.all()
 
 

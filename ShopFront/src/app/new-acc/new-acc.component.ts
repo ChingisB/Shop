@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {WelcomePageComponent} from "../welcome-page/welcome-page.component";
+import {UserService} from "../user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-acc',
@@ -7,12 +9,26 @@ import {WelcomePageComponent} from "../welcome-page/welcome-page.component";
   styleUrls: ['./new-acc.component.css']
 })
 export class NewAccComponent {
-  constructor(public welcomePageComponent: WelcomePageComponent) {
+  constructor(public welcomePageComponent: WelcomePageComponent,
+              private userService: UserService, private router: Router) {
   }
-  email: string | undefined;
-  password: string | undefined;
-  passwordCopy: string | undefined;
+  username: string = "";
+  email: string = "";
+  password: string = "";
+  passwordCopy: string = "";
   onSubmit() {
-    alert(`Signing in with email ${this.email} and password ${this.password} and copy of password ${this.passwordCopy}`)
+    if(this.password===this.passwordCopy){
+      this.userService.signUp(this.username, this.password, this.passwordCopy, this.email).subscribe(
+        user => {
+          this.userService.login(this.email, this.password)
+          this.router.navigateByUrl('/products');
+        },
+        error => {
+          console.error(error);
+          alert("such user already exists or some field is empty");
+        })
+    }else{
+      alert("Passwords does not match")
+    }
   }
 }

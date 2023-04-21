@@ -1,0 +1,37 @@
+.card{
+  position: relative;
+  width: auto;
+  height: 350px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  transition: transform 0.1s ease-out;
+}
+.card:hover{
+  transform: translateY(-4px);
+}
+h2,h4,p{
+  margin: 0;
+  font-family: Arial;
+  margin: 2px;
+}
+h4{
+  color: #aaaaaa;
+}
+.blueButton{
+  position: absolute;
+  bottom: 10px;
+  width: 200px;
+  padding: 4%;
+  border: none;
+  border-radius: 4px;
+  background-color: #53a6ff;
+  color: white;
+  font-family: Arial;
+  font-size: 100%;
+  transition: background-color 0.2s ease-in-out;
+}
+.blueButton:hover{
+  background-color: #398de7;
+}

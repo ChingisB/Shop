@@ -1,1 +1,3 @@
-<p>comment-list works!</p>
+<ng-container *ngFor="let comment of commentList">
+  <app-comment [comment]="comment"></app-comment>
+</ng-container>

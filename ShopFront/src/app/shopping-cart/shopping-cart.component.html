@@ -1,1 +1,23 @@
-<p>shoppingcart works!</p>
+<app-header></app-header>
+<div class="page-borders">
+  <div class="product-cards">
+    <ng-container *ngFor="let i of [1,2,3]">
+      <div class="cart-item">
+        <div class="card">
+          <img src="https://opis-cdn.tinkoffjournal.ru/ip/q9IRBCU2pGMk1r_k0VRuq9RS-aDXOrMa1eoC7CjJVFo/w:1200/aHR0cHM6Ly9pbWct/Y2RuLnRpbmtvZmZq/b3VybmFsLnJ1Ly0v/cG9ka3JhZHVsaS0x/Ni56MXQ0MGYuLmpw/Zw"
+               width="200px">
+          <h2>Test shoes</h2>
+          <p>rating: 4.3</p>
+          <h4>Price: 15000.0</h4>
+          <div class="blue-button">remove from cart</div>
+        </div>
+        <div class="amount">X3</div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="summarize">
+    <div class="total">Total:135000.0</div>
+    <div class="blue-button buy-button">Buy</div>
+  </div>
+
+</div>

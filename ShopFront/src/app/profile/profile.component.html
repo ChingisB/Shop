@@ -1,1 +1,18 @@
-<p>profile works!</p>
+<app-header></app-header>
+<div class="page-borders">
+  <div class="profile-card">
+    <div>Username:</div>
+    <div>email:</div>
+    <div>first name:</div>
+    <div>last name:</div>
+    <div>country:</div>
+    <div>city:</div>
+    <div>address:</div>
+    <div>postal code:</div>
+    <div>telephone:</div>
+  </div>
+  <div class="profile-card for-buttons">
+    <div class="blue-button" (click)="toSettings()">Settings</div>
+    <div class="yellow-button" (click)="logOut()">Log out</div>
+  </div>
+</div>

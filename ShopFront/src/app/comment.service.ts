@@ -7,18 +7,16 @@ import { Comment } from './interfaces/comment';
 @Injectable({
   providedIn: 'root'
 })
-export class CommentService implements OnInit{
+export class CommentService{
 
   private apiUrl: string = "";
 
-  constructor(private httpClient: HttpClient, private apiService: ApiConstService) { }
-
-  ngOnInit(): void {
-    this.apiUrl = this.apiService.getApiUrl() + 'products/'
+  constructor(private httpClient: HttpClient, private apiService: ApiConstService) {
+    this.apiUrl = this.apiService.getApiUrl() + "products/"
   }
 
   getComments(productID: number): Observable<Comment[]>{
-    return this.httpClient.get<Comment[]>(`${this.apiUrl}${productID}/comments/`)
+    return this.httpClient.get<Comment[]>(`${this.apiUrl}${productID}/comments`)
   }
 
   getComment(productID: number, commentID: number): Observable<Comment>{
@@ -26,7 +24,7 @@ export class CommentService implements OnInit{
   }
 
   createComment(productID: number, text: string): Observable<Comment>{
-    return this.httpClient.post<Comment>(`${this.apiUrl}${productID}/comments/`, {text})
+    return this.httpClient.post<Comment>(`${this.apiUrl}${productID}/comments`, {text})
   }
 
   deleteComment(productID: number, commentID: number){
