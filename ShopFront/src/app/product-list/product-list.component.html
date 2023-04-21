@@ -1,1 +1,22 @@
-<p>product-list works!</p>
+<app-header></app-header>
+<div class="page-borders">
+  <div class="search-line">
+    <div class="search-box">
+      <label for="search-input">
+        <img src="https://cdn-icons-png.flaticon.com/512/3917/3917754.png" height="22px">
+      </label>
+      <input id="search-input" type="text" placeholder="search...">
+    </div>
+    <button>
+      <img src="https://uxwing.com/wp-content/themes/uxwing/download/e-commerce-currency-shopping/filters-icon.png" height="22px">
+    </button>
+  </div>
+  <div class="product-cards">
+    <ng-container *ngFor="let product of productList">
+      <app-product-card [product]="product"></app-product-card>
+    </ng-container>
+  </div>
+
+</div>
+
+

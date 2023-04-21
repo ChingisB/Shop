@@ -1,1 +1,29 @@
-<p>profilesettings works!</p>
+<app-header></app-header>
+<div class="page-borders">
+  <div class="form-container">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input type="text" id="first-name" name="first-name" [(ngModel)]="firstName" required placeholder="First Name">
+      </div>
+      <div class="form-group">
+        <input type="text" id="last-name" name="last-name" [(ngModel)]="lastName" required placeholder="Last Name">
+      </div>
+      <div class="form-group">
+        <input type="text" id="country" name="country" [(ngModel)]="country" required placeholder="Country">
+      </div>
+      <div class="form-group">
+        <input type="text" id="city" name="city" [(ngModel)]="city" required placeholder="City">
+      </div>
+      <div class="form-group">
+        <input type="text" id="address" name="address" [(ngModel)]="address" required placeholder="Address">
+      </div>
+      <div class="form-group">
+        <input type="text" id="postal-code" name="postal-code" [(ngModel)]="postalCode" required placeholder="Postal Code">
+      </div>
+      <div class="form-group">
+        <input type="text" id="telephone" name="telephone" [(ngModel)]="telephone" required placeholder="Telephone">
+      </div>
+      <button class="blue-button" type="submit">Submit</button>
+    </form>
+  </div>
+</div>

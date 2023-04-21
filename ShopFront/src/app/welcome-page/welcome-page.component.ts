@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {UserService} from "../user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-welcome-page',
@@ -6,23 +8,24 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./welcome-page.component.css']
 })
 export class WelcomePageComponent implements OnInit{
+  private WelcomeMode: string | undefined;
+
+  constructor(private userService: UserService, private router: Router) {}
+  ngOnInit(): void{
+    if(localStorage.getItem("token")){
+      this.router.navigateByUrl("/products")
+    }
+    this.toLogin()
+    this.WelcomeMode = "Login"
+  }
   toLogin(): void{
-    let login = document.querySelector('app-login')
-    let newAcc = document.querySelector('app-new-acc')
-    // @ts-ignore
-    newAcc.setAttribute('style', 'display: none')
-    // @ts-ignore
-    login.setAttribute('style', 'display: block')
+    this.WelcomeMode="Login"
   }
   toNewAcc(): void{
-    let login = document.querySelector('app-login')
-    let newAcc = document.querySelector('app-new-acc')
-    // @ts-ignore
-    newAcc.setAttribute('style', 'display: block')
-    // @ts-ignore
-    login.setAttribute('style', 'display: none')
+    this.WelcomeMode="NewAcc"
   }
-  ngOnInit(): void{
-    this.toLogin()
+
+  getMode(){
+    return this.WelcomeMode
   }
 }

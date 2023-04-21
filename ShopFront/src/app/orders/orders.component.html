@@ -1,0 +1,11 @@
+<app-header></app-header>
+<div class="page-borders">
+  <ng-container *ngFor="let order of [1,2,3]">
+    <div class="order-card">
+      <h2>Status</h2>
+      <ng-container *ngFor="let i of[1,2,3]">
+        <div class="ordered-product">sample product name</div>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>

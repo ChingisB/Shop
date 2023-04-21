@@ -1,1 +1,8 @@
-<p>product-card works!</p>
+<div class="card" (click)="toDetails()">
+  <img src="{{reformatImage(product.image.image)}}"
+  width="200px">
+  <h2>{{product.name}}</h2>
+  <p *ngIf="product.rating != undefined">rating: {{product.rating}}</p>
+  <h4>Price: {{product.price}}</h4>
+  <button class="blueButton" (click)="addToCart($event)">Add to Cart</button>
+</div>

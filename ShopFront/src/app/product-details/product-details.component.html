@@ -1,1 +1,36 @@
-<p>product-details works!</p>
+<app-header></app-header>
+<div class="page-borders">
+  <div class="main-card">
+    <div class="for-image">
+      <img src="{{reformatImage(product.images[0].image)}}"
+           width="100%">
+    </div>
+    <div class="for-main-info">
+      <h1>{{product.name}}</h1>
+      <p>rating: {{product.rating}}</p>
+      <div class="underline"></div>
+      <h3>cost:</h3>
+      <h2>{{product.price}} KZT</h2>
+      <div>
+        <button class="blue-button">Add to cart</button>
+        <button class="blue-button">Like</button>
+      </div>
+
+    </div>
+  </div>
+  <div class="feature-card">
+    <h2>Characteristics</h2>
+    <h3>Vendor:</h3>
+    <p>{{product.vendor.name}}</p>
+    <div class="underline"></div>
+    <h3>Description:</h3>
+    <p>{{product.description}}</p>
+  </div>
+  <div class="feature-card">
+    <div class="comment-container">
+      <textarea #commentInput class="comment-field" placeholder="Введите комментарий"></textarea>
+    </div>
+    <button class="blue-button submit-button" (click)="submitComment(commentInput.value)">Submit</button>
+    <app-comment-list #commentList [productId]="product.id"></app-comment-list>
+  </div>
+</div>

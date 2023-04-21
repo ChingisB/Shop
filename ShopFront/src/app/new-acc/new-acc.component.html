@@ -1,8 +1,12 @@
-<h1>Welcome to ChinaShop</h1>
+<h1>Welcome to KefteMarket</h1>
 <form (ngSubmit)="onSubmit()">
   <div class="formField">
+    <label for="username">username</label>
+    <input type="username" id="username" name="username" [(ngModel)]="username" required placeholder="your login">
+  </div>
+  <div class="formField">
     <label for="email">email</label>
-    <input type="email" id="email" name="email" [(ngModel)]="email" required placeholder="your login">
+    <input type="email" id="email" name="email" [(ngModel)]="email" required placeholder="your email">
   </div>
   <div class="formField">
     <label for="password">password</label>

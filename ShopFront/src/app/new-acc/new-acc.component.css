@@ -2,8 +2,7 @@ h1{
   font-family: Arial;
   font-weight: 700;
   font-size: 190%;
-  margin: 10% 0;
-  margin-bottom: 5%;
+  margin: 10% 0 5%;
 }
 .formField{
   display: flex;
@@ -11,7 +10,6 @@ h1{
   padding: 2%;
 }
 label{
-  margin: 3% 0%;
   font-size: 85%;
   font-family: Arial;
   color: grey;
@@ -56,5 +54,5 @@ a,.fakeA{
   color: #4a4ad5;
 }
 .divisor{
-  margin: 10%;
+  margin: 5%;
 }

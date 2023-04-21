@@ -1,14 +1,23 @@
 div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    font-family: 'OpenSans';
-    font-style: normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'OpenSans';
+  font-style: normal;
+  background-color: #53a6ff;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  color: white;
 }
 
 div div{
-    display: flex;
-    justify-content: space-between;
-    width: 150px;
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  margin: 0;
+}
+
+.no-cursor{
+  cursor: pointer;
 }
