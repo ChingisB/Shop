@@ -1,0 +1,5 @@
+config.py
+dockerfile
+*/venv
+.dockerignore
+*/__pycache__
